@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body ng-app="app" ng-controller="uploadCtrl">
+
+<a href="" ng-click="upload()">upload</a>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js">
+</script>
+
+<script>
+	var app = angular.module('app', []);
+
+	app.controller("uploadCtrl", function($scope, $http){
+
+		$scope.upload = function()
+		{
+			$http({'method' : 'get', 'url' : '/newUpload'})
+            .success(function(data){
+               console.log(data);
+            })
+            .error(function(){
+
+            })
+		}
+		
+	})
+
+</script>
+</body>
+</html>
+
