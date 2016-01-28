@@ -20,7 +20,7 @@ The app starts a server and listens on port 9000 for connection.
 
 So, Run the app with the following command.
 
-$ node server OR $ sudo node server
+    $ node server OR $ sudo node server
 
 Then, load http://localhost:9000/ in a browser to see the output.
 
