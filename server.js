@@ -2,13 +2,16 @@ var express = require('express');
 
 var app = express()
 	, fs = require('fs')
-	, path = require('path');
+	, path = require('path')
+	, request = require('request')
+    , cheerio = require('cheerio')
+    , underscore = require('underscore');
 
 var env = process.env.NODE_ENV || 'production'
 	, config = require('./config/config')[env]
 	, mongoose = require('mongoose');
 
-var db = mongoose.connect('mongodb://localhost/orbitax');
+var db = mongoose.connect('mongodb://localhost/consumedata');
 
 
 app.use(express.static(__dirname + '/public'));

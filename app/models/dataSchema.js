@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var uploadSchema = new mongoose.Schema({
+var dataSchema = new mongoose.Schema({
 		
 	Name: String,
 	IsDirectory: Boolean,
@@ -9,4 +9,4 @@ var uploadSchema = new mongoose.Schema({
 
 });
 
-mongoose.model("uploadModel", uploadSchema);
+mongoose.model("dataModel", dataSchema);

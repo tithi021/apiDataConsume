@@ -3,10 +3,10 @@ var path = require('path')
 
 module.exports = {
   development: {
-    db: 'mongodb://localhost/orbitax',
+    db: 'mongodb://localhost/consumedata',
     root: rootPath,
     app: {
-      name: 'orbitax'
+      name: 'consumedata'
     }
   }
   

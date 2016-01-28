@@ -1,0 +1,17 @@
+{
+  "name": "api_based_data_consumes",
+  "version": "1.0.0",
+  "description": "api based data consumes",
+  "main": "server.js",
+  "author": "Afroza",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4 ",
+    "mongodb": "^2.1.4",
+    "mongoose": "^4.3.7",
+    "body-parser": "^1.14.2",
+    "cheerio": "^0.19.0",
+    "request": "^2.64.0",
+    "underscore": "^1.8.3"
+  }
+}

@@ -1,12 +1,12 @@
 var async = require('async')
 	, mongoose = require('mongoose')
-	, uploadModel = mongoose.model('uploadModel');
+	, dataModel = mongoose.model('dataModel');
 
 module.exports = function (app) {
 
   // upload routes
 
-  var upload = require('../app/controller/upload');
+  var data = require('../app/controller/data');
 
-  app.get('/newUpload', upload.newUpload)
+  app.get('/getallscrapingdata', data.getallscrapingdata);
 }
