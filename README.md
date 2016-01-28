@@ -1,6 +1,6 @@
 #Additional instructions for help to run this project.
 
-*** Make sure you have Node.js installed and MongoDB setup on your machine.
+*** Make sure you have Node.js installed and MongoDB setup on your machine. ***
 
 Then, In the Command Prompt, execute the following command -
 
