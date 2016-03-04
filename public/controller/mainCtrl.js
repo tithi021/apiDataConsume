@@ -18,6 +18,16 @@ app.controller("mainCtrl", function($scope, $http){
         })
 	}
 
+	$scope.getData = function(){
+		$http({'method' : 'get', 'url' : '/getDataForInterview'})
+        .success(function(data){
+           console.log(data);
+        })
+        .error(function(){
+
+        })
+	}
+
 	
 
 

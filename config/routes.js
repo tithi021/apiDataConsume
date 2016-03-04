@@ -9,4 +9,5 @@ module.exports = function (app) {
   var data = require('../app/controller/data');
 
   app.get('/getallscrapingdata', data.getallscrapingdata);
+  app.get('/getDataForInterview', data.getDataForInterview);
 }

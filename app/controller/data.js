@@ -7,6 +7,8 @@ var mongoose = require('mongoose')
 
 	, dataModel = mongoose.model('dataModel');
 
+
+
 exports.getallscrapingdata = function(req, res){
 
   request('https://www.data.gov/', function(err, response, body){
@@ -39,4 +41,40 @@ exports.getallscrapingdata = function(req, res){
     }
   })
         
+}
+exports.getDataForInterview = function(req, res){
+  request('https://hasin.me/', function(err, response,body){
+    var time = [];
+    
+    if(!err){
+      var $ = cheerio.load(body);
+
+      $("div.entry-date").each(function(){
+         time.push($("time.published",this).text());
+
+      });
+      // console.log(time);
+      var newvalue =0;
+      var diffDays =0;
+      var day = 0;
+      for(i=0; i<time.length; i++){
+        
+        var olddate = time[i];
+        var newdate = time[i+1];
+        
+        var date1 = Date.parse(olddate);
+        var date2 = Date.parse(newdate)
+
+        var date3 = new Date(date1);
+        var date4 = new Date(date2);
+        var timeDiff = Math.abs(date4.getTime() - date3.getTime());
+        diffDays += Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+    console.log(diffDays / time.length);
+        
+        
+      }
+
+    }
+
+  })
 }
