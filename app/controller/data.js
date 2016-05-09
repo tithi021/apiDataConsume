@@ -82,15 +82,17 @@ exports.getDataForInterview = function(req, res){
 exports.stackoverflow = function(){
   request('https://stackoverflow.com/jobs', function(err, res, body){
     if(!err){
-      var data;
+      var designation;
+      var tag;
       var $ = cheerio.load(body);
 
       $("div.listResults").each(function(){
-        data = ($('div.-title h1 a.job-link').text());
+        designation = ($('div.-title', this).text());
         
-        
+
       });
-      console.log(data)
+      console.log(designation)
+      console.log(tag)
     
     //Count BROWSE TOPICS
     //var count = $("ul.topics").children().children().length;
