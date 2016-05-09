@@ -69,12 +69,40 @@ exports.getDataForInterview = function(req, res){
         var date4 = new Date(date2);
         var timeDiff = Math.abs(date4.getTime() - date3.getTime());
         diffDays += Math.ceil(timeDiff / (1000 * 3600 * 24)); 
-    console.log(diffDays / time.length);
+        console.log(diffDays / time.length);
         
         
       }
 
     }
 
+  })
+}
+
+exports.stackoverflow = function(){
+  request('https://stackoverflow.com/jobs', function(err, res, body){
+    if(!err){
+      var data;
+      var $ = cheerio.load(body);
+
+      $("div.listResults").each(function(){
+        data = ($('div.-title h1 a.job-link').text());
+        
+        
+      });
+      console.log(data)
+    
+    //Count BROWSE TOPICS
+    //var count = $("ul.topics").children().children().length;
+
+    //get BROWSE TOPICS name
+      // for(i=0; i < count; i++){
+      //   topics.push($("ul.topics").children().children().eq(i).text());
+      // }
+
+      // var browseTopic = _.uniq(topics);
+      // //send data on client side
+      // res.send({"browseTopic": browseTopic ,"header": header, "paragraph": paragraph})
+    }
   })
 }

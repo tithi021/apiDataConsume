@@ -27,7 +27,15 @@ app.controller("mainCtrl", function($scope, $http){
 
         })
 	}
+  $scope.stackoverflow = function(){
+    $http({'method' : 'get', 'url' : '/stackoverflow'})
+        .success(function(data){
+           console.log(data);
+        })
+        .error(function(){
 
+        })
+  }
 	
 
 

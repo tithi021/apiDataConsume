@@ -10,4 +10,5 @@ module.exports = function (app) {
 
   app.get('/getallscrapingdata', data.getallscrapingdata);
   app.get('/getDataForInterview', data.getDataForInterview);
+  app.get('/stackoverflow', data.stackoverflow);
 }

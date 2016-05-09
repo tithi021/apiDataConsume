@@ -31,7 +31,7 @@ fs.readdirSync(models_path).forEach(function (file) {
 
 require('./config/routes')(app,config);
 
-var server = app.listen(9000, function(){
+var server = app.listen(8000, function(){
 	var host = server.address().address;
 	var port = server.address().port;
 
